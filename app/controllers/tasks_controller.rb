@@ -40,7 +40,8 @@ class TasksController < ApplicationController
   def update
     if @task.update(task_params)
       flash[:success] = 'Task は正常に更新されました'
-      redirect_to @task
+      #redirect_to @task
+      redirect_to root_url
     else
       flash.now[:danger] = 'Task は更新されませんでした'
       render :edit
@@ -51,8 +52,8 @@ class TasksController < ApplicationController
     @task.destroy
 
     flash[:success] = 'Task は正常に削除されました'
-    #redirect_to tasks_url
-    redirect_back(fallback_location: root_path)
+    redirect_to tasks_url
+    #redirect_back(fallback_location: root_path)
   end
 
   private
