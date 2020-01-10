@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   patch 'tasks/:id', to: 'tasks#update'
   
   get 'signup', to: 'users#new'
-  resources :users, only: [:index, :show, :new, :create]
-  resources :tasks, only: [:edit, :index, :show, :new, :create, :destroy]
+  #resources :users, only: [:index, :show, :new, :create]
+  resources :users, only: [:show, :new, :create]
+  #resources :tasks, only: [:edit, :index, :show, :new, :create, :destroy]
+  resources :tasks
 end

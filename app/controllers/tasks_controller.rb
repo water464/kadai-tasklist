@@ -29,8 +29,8 @@ class TasksController < ApplicationController
     else
       @tasks = current_user.tasks.order(id: :desc).page(params[:page])
       flash.now[:danger] = 'Task が作成されませんでした'
-      #render :new
-      render 'tasks/index'
+      render :new
+      #render 'tasks/index'
     end    
   end
 
